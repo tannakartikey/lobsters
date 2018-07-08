@@ -340,6 +340,31 @@ div#leader {
 	padding: 4px 0px;
 }
 
+#headerright .headerlinks a.login-text, #headerright .headerlinks a.signup-text{
+	padding: 5px;
+	border: 1px solid gray;
+	border-radius: 5px;
+}
+
+#headerright .headerlinks a.login-text {
+	color: black;
+	margin-right: 4px;
+}
+
+#headerright .headerlinks a.login-text:hover {
+	color: white;
+	background: gray;
+}
+
+#headerright .headerlinks a.signup-text {
+	color: white;
+	background: black;
+}
+
+#headerright .headerlinks a.signup-text:hover {
+	background: gray;
+}
+
 /* footer */
 
 div#footer {
