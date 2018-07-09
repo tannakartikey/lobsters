@@ -13,6 +13,10 @@ class ApplicationController < ActionController::Base
   # (lobster_trap) which is sent even to logged-out visitors
   CACHE_PAGE = proc { false && @user.blank? && cookies[TAG_FILTER_COOKIE].blank? }
 
+  before_action do
+    @search = Search.new
+  end
+
   def authenticate_user
     # eagerly evaluate, in case this triggers an IpSpoofAttackError
     request.remote_ip

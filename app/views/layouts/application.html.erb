@@ -99,6 +99,16 @@
 
       <%= yield %>
 
+      <% if not controller_name.eql? 'search' %>
+        <div class="box">
+          <%= form_tag "/search", :method => :get do %>
+            <div class="boxline">
+              <%= text_field_tag "q", @search.q, { :size => 40 } %>
+              <input type="submit" value="Search">
+            </div>
+          <% end %>
+        </div>
+      <% end %>
       <div id="footer">
         <% if lookup_context.template_exists?("footer", "layouts", true) %>
           <%= render :partial => "layouts/footer" %>
