@@ -365,6 +365,14 @@ div#leader {
 	background: gray;
 }
 
+.dropdown-content {
+	display: none;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
 /* footer */
 
 div#footer {
