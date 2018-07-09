@@ -36,6 +36,9 @@ gem "commonmarker", "~> 0.14"
 # for twitter-posting bot
 gem "oauth"
 
+# for social share
+gem 'social-share-button'
+
 # for parsing incoming mail
 gem "mail"
 
