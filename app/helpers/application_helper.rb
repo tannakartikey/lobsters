@@ -184,4 +184,12 @@ module ApplicationHelper
 
     raw(content_tag(:span, ago, title: time.strftime("%F %T %z"), class: span_class))
   end
+  
+  def top_tag_link
+    if controller_name.eql? 'home' and action_name.eql? 'tagged'
+      "/top?tag=#{params[:tag]}"
+    else
+      "/top"
+    end
+  end
 end

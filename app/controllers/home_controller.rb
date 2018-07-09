@@ -213,9 +213,15 @@ class HomeController < ApplicationController
     length = time_interval(params[:length])
     @cur_url << "/#{params[:length]}"
 
-    @stories, @show_more = get_from_cache(top: true, length: length) {
-      paginate stories.top(length)
-    }
+    if params[:tag].blank?
+      @stories, @show_more = get_from_cache(top: true, length: length) {
+        paginate stories.top(length)
+      }
+    else
+      @stories, @show_more = get_from_cache(top: true, length: length) {
+        paginate stories.top_tagged(Tag.where(tag: params[:tag]).first!, length)
+      }
+    end
 
     if length[:dur] > 1
       @heading = @title = "Top Stories of the Past #{length[:dur]} " <<

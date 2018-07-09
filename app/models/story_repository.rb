@@ -47,4 +47,18 @@ class StoryRepository
       "#{length[:dur]} #{length[:intv].upcase})")
     top.order("#{Story.score_sql} DESC")
   end
+  
+  def top_tagged(tag, length = nil)
+    top = Story.base.positive_ranked.where(
+      Story.arel_table[:id].in(
+        Tagging.arel_table.where(
+          Tagging.arel_table[:tag_id].eq(tag.id)
+        ).project(
+          Tagging.arel_table[:story_id]
+        )
+      )
+    ).where("created_at >= (NOW() - INTERVAL " <<
+      "#{length[:dur]} #{length[:intv].upcase})")
+    top.order("#{Story.score_sql} DESC")
+  end
 end
