@@ -19,7 +19,7 @@ class="story <%= story.vote && story.vote[:vote] == 1 ? "upvoted" : "" %>
   <div class="details">
     <span class="link">
       <% if story.can_be_seen_by_user?(@user) %>
-        <a href="<%= action_name == "index" ? story.comments_path : story.url_or_comments_path %>"><%=
+        <a href="<%= action_name == "show" ? story.url_or_comments_path : story.comments_path %>"><%=
           break_long_words(story.title) %></a>
       <% end %>
       <% if story.is_gone? %>
