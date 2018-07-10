@@ -1447,3 +1447,17 @@ div.fieldWithErrors {
 	position: absolute;
     top: 35px;
 }
+
+.footer-search {
+	text-align: center;
+}
+
+/* Story Picture */
+
+.details {
+	display: flex;
+}
+
+.story-picture {
+	padding-right: 10px;
+}

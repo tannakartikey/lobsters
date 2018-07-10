@@ -24,6 +24,7 @@ class Story < ApplicationRecord
            :source => :user
   has_many :hidings, :class_name => 'HiddenStory', :inverse_of => :story, :dependent => :destroy
   has_many :savings, :class_name => 'SavedStory', :inverse_of => :story, :dependent => :destroy
+  has_one_attached :picture
 
   scope :base, -> { includes(:tags).unmerged.not_deleted }
   scope :deleted, -> { where(is_expired: true) }

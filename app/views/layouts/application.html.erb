@@ -105,8 +105,8 @@
       <% if not controller_name.eql? 'search' %>
         <div class="box">
           <%= form_tag "/search", :method => :get do %>
-            <div class="boxline">
-              <%= text_field_tag "q", @search.q, { :size => 40 } %>
+            <div class="boxline footer-search">
+              <%= text_field_tag "q", @search.q, { :size => 30} %>
               <input type="submit" value="Search">
             </div>
           <% end %>

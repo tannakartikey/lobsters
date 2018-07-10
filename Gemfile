@@ -39,6 +39,8 @@ gem "oauth"
 # for social share
 gem 'social-share-button'
 
+gem "aws-sdk-s3", require: false
+
 # for parsing incoming mail
 gem "mail"
 

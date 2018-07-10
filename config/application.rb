@@ -10,6 +10,7 @@ require 'rails'
   action_mailer/railtie
   rails/test_unit/railtie
   sprockets/railtie
+  active_storage/engine
 ).each do |railtie|
   begin
     require railtie

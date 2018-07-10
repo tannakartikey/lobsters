@@ -17,6 +17,10 @@ class="story <%= story.vote && story.vote[:vote] == 1 ? "upvoted" : "" %>
     <div class="score"><%= story.score %></div>
   </div>
   <div class="details">
+    <div class="story-picture-container">
+      <%= link_to image_tag(story.picture, class: 'story-picture', width: 80, height: 50), url_for(story.picture) unless story.picture.attachment.nil? %>
+    </div>
+    <div class="story-other-details">
     <span class="link">
       <% if story.can_be_seen_by_user?(@user) %>
         <a href="<%= action_name == "show" ? story.url_or_comments_path : story.comments_path %>"><%=
@@ -82,6 +86,7 @@ class="story <%= story.vote && story.vote[:vote] == 1 ? "upvoted" : "" %>
               <a href="<%= edit_story_path(ms.short_id) %>">edit</a>
             <% end %>
           </span>
+          </div>
         <% end %>
       <% end %>
     <% end %>
