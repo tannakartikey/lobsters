@@ -1,6 +1,18 @@
 class UsersController < ApplicationController
   before_action :require_logged_in_moderator,
                 :only => [:enable_invitation, :disable_invitation, :ban, :unban]
+  before_action :require_logged_in_admin, except: [:index]
+  
+  def index
+    @cur_url = "/users"
+    @title = "Users"
+
+    @users = User.all
+
+    respond_to do |format|
+      format.html { render :action => "index" }
+    end
+  end
 
   def show
     @showing_user = User.where(:username => params[:username]).first!

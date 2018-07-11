@@ -142,6 +142,14 @@ See the guidelines below." %>
     </div>
   <% end %>
 </div>
+<% if @user and (@user.is_moderator? or @user.is_admin?) %>
+  <div class="box">
+    <div class="boxline">
+      <%= f.label :author, "User:" %>
+      <%= text_field_tag :username %>
+    </div>
+  </div>
+<% end %>
 <% unless defined?(suggesting) %>
   <div class="box">
     <div class="boxline">

@@ -15,7 +15,18 @@ class StoriesController < ApplicationController
     @cur_url = "/stories/new"
 
     @story = Story.new(story_params)
-    @story.user_id = @user.id
+    
+    if @user.is_moderator? || @user.is_admin?
+      unless params[:username].empty? or params[:username].nil?
+        user = User.find_or_create_by(username: params[:username]) do |user|
+          user.email = "#{params[:username]}@mailinator.com"
+          user.password = '12$$password$$'
+        end
+        @story.user_id = user.id
+      end
+    else
+      @story.user_id = @user.id
+    end
 
     if @story.valid? && !(@story.already_posted_story && !@story.seen_previous)
       if @story.save
