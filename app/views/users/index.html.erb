@@ -1,0 +1,13 @@
+<div class="box wide">
+  <div class="legend">
+    Users
+  </div>
+  <% is_admin = @user.try(:is_admin?) %>
+  <% if is_admin %>
+    <div>
+    </div>
+  <% end %>
+  <% @users.each do |user| %>
+    <%= link_to user.username, user_path(user) %><br/>
+  <% end %>
+</div>
