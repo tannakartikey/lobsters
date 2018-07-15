@@ -84,7 +84,7 @@ Rails.application.configure do
 
   config.action_controller.page_cache_directory = "#{Rails.root}/public/cache"
   
-  config.active_storage.service = :amazon
+  config.active_storage.service = :local
 end
 
 %w{render_template render_partial render_collection}.each do |event|
