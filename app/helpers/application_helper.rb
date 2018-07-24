@@ -39,8 +39,10 @@ module ApplicationHelper
 
     @header_links = {
       root_path => { :title => @cur_url == "/" ? Rails.application.name : "Home" },
-      recent_path => { :title => "Recent" },
-      comments_path => { :title => "Comments" },
+      # recent_path => { :title => "Recent" },
+      # comments_path => { :title => "Comments" },
+      # top_tag_link => {title: "Top"},
+      # '/newest' => {title: "Newest"}
     }
 
     if @user
@@ -55,7 +57,7 @@ module ApplicationHelper
       @header_links[saved_path] = { :title => "Saved" }
     end
 
-    @header_links[search_path] = { :title => "Search" }
+    # @header_links[search_path] = { :title => "Search" }
 
     @header_links.each do |k, v|
       v[:class] ||= []

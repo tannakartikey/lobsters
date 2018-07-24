@@ -276,7 +276,22 @@
 	}
 	
 	.comments_label {
-		font-size: 12pt;
-		font-weight: 600;
+		/*font-size: 12pt;*/
+		/*font-weight: 600;*/
+		display: inline-block;
+	}
+	
+	div#wrapper {
+		zoom: 0;
+	}
+	
+	div#headerright {
+		display: block;
+		margin-top: 15px;
+		margin-bottom: 10px;
+	}
+	
+	.inline-search-form {
+		margin-top: 10px;
 	}
 }

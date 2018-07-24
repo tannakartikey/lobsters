@@ -366,13 +366,6 @@ div#leader {
 	background: gray;
 }
 
-.dropdown-content {
-	display: none;
-}
-
-/*.dropdown:hover .dropdown-content {*/
-/*	display: block;*/
-/*}*/
 
 /* footer */
 
@@ -1460,4 +1453,53 @@ div.fieldWithErrors {
 
 .story-picture {
 	padding-right: 10px;
+	width: 40px;
+	height: auto;
 }
+
+/* Zoom in */
+div#wrapper {
+	zoom: 112%;
+}
+
+.inline-search-form {
+	display: inline-block;
+}
+
+.dropdown-content {
+	display: none;
+}
+
+.dropdown-content.show-dropdown {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    border: 1px solid black;
+    background: white;
+	
+}
+
+a.signup-text.dropdown-link {
+    margin-left: 3px;
+    padding-top: 2px;
+}
+
+a.signup-text.dropdown-link:hover {
+	color: brown;
+}
+
+#header {
+	padding-bottom: 0px;
+}
+
+.sub-header {
+	padding-top: 5px;
+}
+
+.dropdown-icon {
+	top: 4px;
+	position: relative;
+}
+/*.dropdown:hover .dropdown-content {*/
+/*	display: block;*/
+/*}*/
