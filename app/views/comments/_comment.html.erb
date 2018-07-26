@@ -35,7 +35,7 @@ class="comment <%= comment.current_vote ? (comment.current_vote[:vote] == 1 ?
       <%= defined?(children) && children ? "" : "no_children" %>"></div>
   <% end %>
 
-  <div class="details">
+  <div class="details comment_details">
     <div class="byline">
       <a name="c_<%= comment.short_id %>"></a>
 

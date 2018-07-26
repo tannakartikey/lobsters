@@ -1451,10 +1451,19 @@ div.fieldWithErrors {
 	display: flex;
 }
 
+.details.comment_details {
+	display: block;
+}
+
 .story-picture {
 	padding-right: 10px;
-	width: 40px;
+	width: 30px;
 	height: auto;
+}
+
+.story-picture-container {
+	margin-top: auto;
+	margin-bottom: auto;
 }
 
 /* Zoom in */
