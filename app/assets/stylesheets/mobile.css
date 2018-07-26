@@ -294,4 +294,8 @@
 	.inline-search-form {
 		margin-top: 10px;
 	}
+	
+	.story-picture-container{
+		margin: auto;
+	}
 }
