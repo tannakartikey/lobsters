@@ -1,0 +1,46 @@
+-------------------------------------------------------------------------------
+Thank you for using DigitalOcean's Rails Application.
+
+The "ufw" firewall is enabled. All ports except for 22, 80, and 443 are BLOCKED.
+
+Let's Encrypt has been pre-installed for you. If you have a domain name, and
+you will be using it with this 1-Click app, please see: http://do.co/le-lemp
+
+You can use the following SFTP credentials to upload your files (using FileZilla/WinSCP/Rsync):
+  * Host: 142.93.200.206
+  * User: rails
+  * Pass: 18ea16f7ef3b485941084d8f3ca0f6b8
+
+You can use the following Postgres database credentials:
+  * User: rails
+  * Pass:
+
+Ruby has been configured to use vendored bundles. Please use the 'rails' user to
+interact with the default project via "sudo -i -u rails"
+
+Passwords have been saved in /root/.digitalocean.passwords
+
+Nginx is configured to forward requests for unicorn to a local unix socket
+    Public IP: http://142.93.200.206
+    Access Logs: /var/log/nginx/access.log
+    Error Logs: /var/log/nginx/error.log
+
+Unicorn is managed via 'systemd'.
+    Proccess management: systemctl {start|stop|restart} unicorn.service
+    systemd Unit file: /etc/systemd/system/unicorn.service
+    Configuration files: /etc/unicorn.conf
+    Log file: /var/log/unicorn/unicorn.log
+
+Ruby information:
+    All Gems and processes have been installed locally to the 'rails' user. Please
+    'sudo -i -u rails' to use this environment.
+        Version: ruby-2.4.0
+        List available gems: gem list
+        List Rubies: list
+        Show the Gem environment: gem env
+
+You can learn more about using this image here: http://do.co/railsapp
+
+-------------------------------------------------------------------------------------
+To delete this message of the day: rm -rf /etc/update-motd.d/99-one-click
+
