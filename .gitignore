@@ -33,10 +33,3 @@ app/views/layouts/_footer.*
 app/assets/stylesheets/local/*
 public/favicon.ico
 public/apple-touch-icon*
-
-# files added in production
-lib/tasks/deploy.rake
-config/initializers/production.rb
-config/initializers/secret_token.rb
-config/*.sphinx.conf
-config/unicorn.conf.rb

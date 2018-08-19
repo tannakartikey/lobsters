@@ -23,12 +23,10 @@
   <title><%= @title.present? ? "#{@title} | " : "" %><%=
     Rails.application.name %></title>
   <%= stylesheet_link_tag "application", :media => "all" %>
-  <% if @user %>
     <%= javascript_include_tag "application" %>
     <script>
-      Lobsters.curUser = '<%= @user.id %>';
+      Lobsters.curUser = '<%= @user.id  if @user%>';
     </script>
-  <% end %>
   <%= csrf_meta_tags %>
   <% if @rss_link %>
     <link rel="alternate" type="application/rss+xml"
@@ -60,6 +58,16 @@
             <a href="<%= u %>" class="<%= v[:class].join(" ") %>"><%=
               v[:title] %></a>
           <% end %>
+        <% if not controller_name.eql? 'search' %>
+          <!--<div class="box">-->
+            <%= form_tag "/search", :method => :get, class: 'inline-search-form' do %>
+              <!--<div class="footer-search">-->
+                <%= text_field_tag "q", @search.q, { :size => 30, placeholder: "Search here" } %>
+                <!--<input type="submit" value="Search">-->
+              <!--</div>-->
+            <% end %>
+          <!--</div>-->
+        <% end %>
         </span>
       </div>
 
@@ -74,12 +82,22 @@
           <% end %>
         </span>
       </div>
-
+      <script>
+      function dropdown_function() {
+        console.log('function clicked');
+          var x = document.getElementById("Demo");
+          if (x.className.indexOf("show-dropdown") == -1) {
+              x.className += " show-dropdown";
+          } else { 
+              x.className = x.className.replace(" show-dropdown", "");
+          }
+      }
+      </script>
       <div class="clear"></div>
       <div class="sub-header">
         <span class="headerlinks dropdown">
-          <a href="#" class="signup-text dropdown-button">Recent</a>
-          <div class="dropdown-content">
+          <a href="#" class="signup-text dropdown-button" onclick="dropdown_function()">Category<svg xmlns="http://www.w3.org/2000/svg" class="dropdown-icon" width="18" height="18" viewBox="0 0 18 18"><path d="M5 8l4 4 4-4z"/></svg></a>
+          <div class="dropdown-content" id="Demo">
             <a href="/t/general" class="signup-text dropdown-link">Genral</a>
             <a href="/t/politics" class="signup-text dropdown-link">Politics</a>
             <a href="/t/fun" class="signup-text dropdown-link">Fun</a>
@@ -102,6 +120,7 @@
 
       <%= yield %>
 
+      <!--
       <% if not controller_name.eql? 'search' %>
         <div class="box">
           <%= form_tag "/search", :method => :get do %>
@@ -112,6 +131,7 @@
           <% end %>
         </div>
       <% end %>
+      -->
       <div id="footer">
         <% if lookup_context.template_exists?("footer", "layouts", true) %>
           <%= render :partial => "layouts/footer" %>

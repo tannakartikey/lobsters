@@ -18,7 +18,7 @@ class="story <%= story.vote && story.vote[:vote] == 1 ? "upvoted" : "" %>
   </div>
   <div class="details">
     <div class="story-picture-container">
-      <%= link_to image_tag(story.picture, class: 'story-picture', width: 80, height: 50), url_for(story.picture) unless story.picture.attachment.nil? %>
+      <%= link_to image_tag(story.picture, class: 'story-picture'), url_for(story.picture), target: "_blank" unless story.picture.attachment.nil? %>
     </div>
     <div class="story-other-details">
     <span class="link">
@@ -159,14 +159,16 @@ class="story <%= story.vote && story.vote[:vote] == 1 ? "upvoted" : "" %>
               :class => "saver" %>
           <% end %>
         <% end %>
+        <!--
         <% if story.url.present? %>
           |
           <a href="<%= story.archive_url %>" rel="nofollow"
             target="_blank">cached</a>
         <% end %>
+        -->
         <% if !story.is_gone? %>
+            <span class="comment-pipe">|</span>
           <span class="comments_label">
-            |
             <a href="<%= story.comments_path %>">
             <% if story.comments_count == 0 %>
               no comments
@@ -187,8 +189,8 @@ class="story <%= story.vote && story.vote[:vote] == 1 ? "upvoted" : "" %>
     </div>
   </div>
 </div>
-<div class="mobile_comments <%= story.comments_count == 0 ? "zero" : "" %>"
-style="display: none;">
-  <a href="<%= story.comments_path %>"><%= story.comments_count %></a>
-</div>
+<!--<div class="mobile_comments <%= story.comments_count == 0 ? "zero" : "" %>"-->
+<!--style="display: none;">-->
+<!--  <a href="<%= story.comments_path %>"><%= story.comments_count %></a>-->
+<!--</div>-->
 </li>

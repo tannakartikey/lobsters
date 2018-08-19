@@ -200,9 +200,9 @@
 	ol.stories.list li.story div.mobile_comments.zero a:after {
 		border-color: #d8d8d8;
 	}
-	ol.stories.list li.story span.comments_label {
-		display: none;
-	}
+	/*ol.stories.list li.story span.comments_label {*/
+	/*	display: none;*/
+	/*}*/
 
 
 	li div.details,
@@ -269,5 +269,33 @@
 	div#footer {
 		text-align: center;
 		float: none;
+	}
+	
+	.details {
+		flex-direction: row-reverse;
+	}
+	
+	.comments_label {
+		/*font-size: 12pt;*/
+		/*font-weight: 600;*/
+		display: inline-block;
+	}
+	
+	div#wrapper {
+		zoom: 0;
+	}
+	
+	div#headerright {
+		display: block;
+		margin-top: 15px;
+		margin-bottom: 10px;
+	}
+	
+	.inline-search-form {
+		margin-top: 10px;
+	}
+	
+	.story-picture-container{
+		margin: auto;
 	}
 }
