@@ -8,7 +8,7 @@ test:
 
 amazon:
   service: S3
-  access_key_id: ""
-  secret_access_key: ""
-  region: ""
-  bucket: ""
+  access_key_id: "abcdjk"
+  secret_access_key: "aaaaaa"
+  region: 'sp-east-2'
+  bucket: 'somebucketname'
